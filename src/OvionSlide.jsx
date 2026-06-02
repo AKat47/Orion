@@ -200,11 +200,24 @@ export default function OvionSlide() {
         .slide-stage { touch-action: pan-y; }
 
         /* mobile card layout */
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
           .slide-stage { aspect-ratio: auto !important; min-height: 85vw; }
-          .card-grid { grid-template-columns: 1fr !important; }
+          .card-grid { grid-template-columns: 1fr !important; place-items: center !important; }
           .card-left { display: none !important; }
-          .card-right { padding: 20px 24px !important; gap: 12px !important; justify-content: center !important; }
+          .card-right {
+            width: 100% !important;
+            height: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            padding: 24px 32px !important;
+            gap: 12px !important;
+          }
+          .card-right > div:first-child { text-align: center !important; }
+          .card-right > div:last-child { align-items: center !important; }
+          .contact-rows { align-items: center !important; }
         }
         @media (max-width: 380px) {
           .card-right { padding: 10px 14px 16px !important; }
@@ -348,7 +361,7 @@ export default function OvionSlide() {
                   <div style={{ fontSize: "clamp(10px, 1.4vw, 15px)", letterSpacing: 4, marginTop: 6 }}>STUDIO HEAD</div>
                 </div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 4 }}>
+                <div className="contact-rows" style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 4 }}>
                   <ContactRow icon="✉" text="a6ovionarchitects@gmail.com" delay={0.5} show={drawn} />
                   <ContactRow icon="◉" text="a6ovion_architects" delay={0.65} show={drawn} />
                   <ContactRow icon="▶" text="A6 Ovion Architects" delay={0.8} show={drawn} />
@@ -459,9 +472,6 @@ export default function OvionSlide() {
         </div>
       </div>
 
-      <div style={{ marginTop: 14, fontSize: 11, letterSpacing: 2, opacity: 0.5 }}>
-        SWIPE OR USE ← → · AUTO-ADVANCES
-      </div>
     </div>
   );
 }
