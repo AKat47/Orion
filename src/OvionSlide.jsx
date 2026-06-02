@@ -202,9 +202,9 @@ export default function OvionSlide() {
         /* mobile card layout */
         @media (max-width: 600px) {
           .slide-stage { aspect-ratio: auto !important; min-height: 85vw; }
-          .card-grid { grid-template-columns: 1fr !important; grid-template-rows: auto auto !important; }
-          .card-left { border-right: none !important; border-bottom: 1.5px solid #15110E; margin: 20px 20px 0 !important; padding-bottom: 16px; }
-          .card-right { padding: 14px 20px 20px !important; gap: 10px !important; justify-content: flex-start !important; }
+          .card-grid { grid-template-columns: 1fr !important; }
+          .card-left { display: none !important; }
+          .card-right { padding: 20px 24px !important; gap: 12px !important; justify-content: center !important; }
         }
         @media (max-width: 380px) {
           .card-right { padding: 10px 14px 16px !important; }
